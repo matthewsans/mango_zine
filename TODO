@@ -1,0 +1,37 @@
+components:
+  (Start here - unlocks layout, scroll, animation foundation)
+  ☐ Section - add base layout styles (flex centering, scroll-snap-align) @started(25-04-18 10:24)
+  ☐ FeatureCard - add scroll-reveal animation (IntersectionObserver or Framer Motion)
+  ☐ FeatureCard - expose variant, className, and style props
+  ☐ FeatureCard - forward aria-label, tabIndex, and id props
+  ☐ FeatureCard - add semantic wrapper (<article> or <div role="region">)
+  ☐ BackgroundDots - add <canvas> element
+  ☐ BackgroundDots - set CSS: position: fixed; z-index: -1; pointer-events: none
+  ☐ BackgroundDots - implement dot physics: movement, bounce, randomness
+  ☐ BackgroundDots - set up requestAnimationFrame() loop
+  ☐ BackgroundDots - add resize event listener to keep canvas full-screen
+  ☐ ScrollPrompt - add visual arrow / "Scroll to continue" text
+  ☐ ScrollPrompt - show only on #home section
+  ☐ ScrollPrompt - fade out when user scrolls or on IntersectionObserver trigger
+  
+views:
+  (Priority: Home -> Projects -> Playground -> Resume -> Contact)
+  ☐ Home - add actual intro text, name, and short CTA
+  ☐ Home - include <ScrollPrompt />
+  ☐ Projects - create cards.ts and import it
+  ☐ Projects - map through card data and render <FeatureCard> for each
+  ☐ Playground - embed or link to game canvas
+  ☐ Resume - add styled resume download button inside FeatureCard
+  ☐ Contact - include email + social links
+  ☐ Resume - confirm resume.pdf loads from /public/
+  ☐ Playground - add high-score display (inside FeatureCard)
+  ☐ Projects - optionally build <ProjectCard> component for internal layout
+  ☐ Contact - optionally add a contact form or CTA button
+  
+data:
+  (Support for Projects section - can build early or stub)
+  ☐ cards.ts - define array of project objects with title, description, optional image or link
+  ☐ cards.ts - add id or key field for mapping
+  ☐ cards.ts - optionally include component field for richer content inside cards
+  
+  
