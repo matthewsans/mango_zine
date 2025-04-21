@@ -5,12 +5,29 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #F6EEE3;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Code Card */
+  --blue-bg: #DBEAFE;
+  --blue-icon: #2563EB;
+
+  /* orange */
+  --amber-bg: #FEF3C7;
+  --amber-icon: #D97706;
+
+  /* Green*/
+  --green-bg: #D1FAE5;
+  --green-icon: #16A34A;
+
+  /* Shared */
+  --card-bg: #FFFFFF;
+  --card-text: #0A0A0A;
+  --border-color: #000000;
+  --shadow-color: #0a0a0a;
 }
 
 a {
@@ -26,26 +43,49 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  scroll-behavior: smooth;
-  background: #0e0e0e;
-  color: white;
+  color: black;
   font-family: sans-serif;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 main {
-  position: relative;
-  z-index: 1;
+  position: relative; 
+  z-index: 11; 
+  
 }
 
 .section {
   height: 100vh;
+  max-width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  padding: 2rem;
+  box-sizing: border-box;
+  flex-direction: width;
 }
+
+
+.hero-section {
+  background: transparent;
+  font-size: 2rem;
+  font-weight: 700; /* or use 'bold' */
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  line-height: 1.1;
+  color: black;
+  margin: 1rem auto;
+}
+
+
+.card-section {
+  background: transparent;
+  border-radius: 16px;
+  margin: 1rem auto;
+}
+
+
 
 h1 {
   font-size: 3.2em;
@@ -93,5 +133,65 @@ button:focus-visible {
   }
 }
 
+.button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+  box-shadow: 4px 4px 0 0 var(--shadow-color);
+  transform: translate(0, 0);
+  
+}
+button.insertButton {
+  background-color: var(--green-bg);
+  color: var(--green-icon);
+}
 
-/* TODO: .section*/
+button.updateButton {
+  background-color: var(--amber-bg);
+  color: var(--amber-icon);
+}
+
+button.deleteButton {
+  background-color: #fca5a5;
+  color: #b91c1c;
+}
+
+button.selectButton {
+  background-color: var(--blue-bg);
+  color: var(--blue-icon);
+}
+
+.button:hover {
+  box-shadow: 8px 8px 0 0 var(--shadow-color);
+  transform: translate(-4px, -4px);
+  transition: all 0.2s ease;
+}
+
+.button:active {
+  box-shadow: 2px 2px 0 0 var(--shadow-color);
+  transform: translate(0, 0);
+}
+
+.layout-grid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  padding: 2rem;
+
+}
+
+.bottom-row {
+  width: 100%;
+  display: flex;
+  gap: 2dvw;
+  justify-content: space-between;
+}

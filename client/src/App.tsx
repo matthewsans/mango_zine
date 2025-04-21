@@ -1,6 +1,6 @@
 import Section from "./components/Section";
 import FeatureCard from "./components/FeatureCard";
-import BackgroundDots from "./components/Background";
+import Background from "./components/Background";
 
 import Home from "./views/Home";
 import Projects from "./views/Projects";
@@ -11,7 +11,8 @@ import Contact from "./views/Contact";
 function App() {
   return (
     <>
-      <BackgroundDots />
+      <Background />
+      
 
       <main>
         <Section id="home">
@@ -19,8 +20,18 @@ function App() {
         </Section>
 
         <Section id="projects">
-          <Projects />
+          <div className="layout-grid">
+            <FeatureCard style={{ width: "100%", height: "4rem" }}>T
+              <h3>Let me introduce myself.</h3>
+            </FeatureCard>
+            <div className="bottom-row" style={{width: "100%"}}>
+            <FeatureCard style={{ width: "50%", height: "30vh" }}><button className="button selectButton"> asdf</button></FeatureCard>
+            <FeatureCard style={{ width: "50%", height: "30vh" }}>Right</FeatureCard>
+
+            </div>
+          </div>
         </Section>
+
 
         <Section id="playground">
           <Playground />

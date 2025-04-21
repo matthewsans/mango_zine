@@ -1,23 +1,19 @@
 components:
   (Start here - unlocks layout, scroll, animation foundation)
-  ☐ Section - add base layout styles (flex centering, scroll-snap-align) @started(25-04-18 10:24)
-  ☐ FeatureCard - add scroll-reveal animation (IntersectionObserver or Framer Motion)
-  ☐ FeatureCard - expose variant, className, and style props
-  ☐ FeatureCard - forward aria-label, tabIndex, and id props
-  ☐ FeatureCard - add semantic wrapper (<article> or <div role="region">)
-  ☐ BackgroundDots - add <canvas> element
-  ☐ BackgroundDots - set CSS: position: fixed; z-index: -1; pointer-events: none
-  ☐ BackgroundDots - implement dot physics: movement, bounce, randomness
-  ☐ BackgroundDots - set up requestAnimationFrame() loop
-  ☐ BackgroundDots - add resize event listener to keep canvas full-screen
-  ☐ ScrollPrompt - add visual arrow / "Scroll to continue" text
-  ☐ ScrollPrompt - show only on #home section
-  ☐ ScrollPrompt - fade out when user scrolls or on IntersectionObserver trigger
+  ✔ Section - add base layout styles (flex centering, scroll-snap-align) @started(25-04-18 10:24) @done(25-04-18 21:04) @lasted(10h40m58s)
+  ☐ FeatureCard - add scroll-reveal animation (IntersectionObserver or Framer Motion) @started(25-04-18 21:05)
+  ✔ FeatureCard - expose variant, className, and style props @started(25-04-20 13:31) @done(25-04-20 13:31) @lasted(51s)
+  ✔ FeatureCard - forward aria-label, tabIndex, and id props @started(25-04-20 13:31) @done(25-04-20 13:31) @lasted(39s)
+  ✔ FeatureCard - add semantic wrapper (<article> or <div role="region">) @started(25-04-20 13:31) @done(25-04-20 13:31) @lasted(58s)
+  ✔ BackgroundDots - add <canvas> element @started(25-04-20 14:02) @done(25-04-20 20:56) @lasted(6h54m12s)
+  ✔ BackgroundDots - set CSS: position: fixed; z-index: -1; pointer-events: none @started(25-04-20 20:56) @done(25-04-20 20:56) @lasted(15s)
+  ✔ BackgroundDots - implement dot physics: movement, bounce, randomness @started(25-04-20 20:56) @done(25-04-20 20:56) @lasted(21s)
+  ✔ BackgroundDots - set up requestAnimationFrame() loop @started(25-04-20 20:56) @done(25-04-20 20:56) @lasted(32s)
+  ✔ BackgroundDots - add resize event listener to keep canvas full-screen @started(25-04-20 20:56) @done(25-04-20 20:56) @lasted(40s)
   
 views:
   (Priority: Home -> Projects -> Playground -> Resume -> Contact)
   ☐ Home - add actual intro text, name, and short CTA
-  ☐ Home - include <ScrollPrompt />
   ☐ Projects - create cards.ts and import it
   ☐ Projects - map through card data and render <FeatureCard> for each
   ☐ Playground - embed or link to game canvas

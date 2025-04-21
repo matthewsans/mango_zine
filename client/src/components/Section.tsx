@@ -6,11 +6,17 @@ type SectionProps = {
 };
 
 const Section: React.FC<SectionProps> = ({ id, children }) => {
+  const isHome = id === "home";
+
   return (
-    <section id={id} className="section">
+    <section
+      id={id}
+      className={`section ${isHome ? "hero-section" : "card-section"}`}
+    >
       {children}
     </section>
   );
 };
 
 export default Section;
+
