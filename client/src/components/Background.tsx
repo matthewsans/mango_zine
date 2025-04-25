@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import "./Background.css";
 
 const RADIUS = 5;
 const MAX_DIST = 150;
-const N_DOTS = 50;
+const N_DOTS = 420;
 const SPEED = 15;           // pixels per second
+let mousex = 0;
+let mousey = 0;
 
 export default function Home() {
   useEffect(() => {
@@ -44,6 +45,12 @@ export default function Home() {
         ]);
       }
     }
+    window.addEventListener("mousemove", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      mousex = event.clientX - rect.left;
+      mousey = event.clientY - rect.top;
+    });
+    
 
     /* ---------- animation loop ---------- */
     let lastTime = performance.now();
@@ -76,6 +83,19 @@ export default function Home() {
 
       /* draw lines */
       for (let i = 0; i < N_DOTS; i++) {
+        
+        const dx = mousex - dots[i][0];
+        const dy = mousey - dots[i][1];
+        const mousedist = Math.hypot(dx, dy);
+
+        if (mousedist < MAX_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(dots[i][0], dots[i][1]);
+          ctx.lineTo(mousex, mousey);
+          ctx.lineWidth = 2 * (1 - mousedist / MAX_DIST);
+          ctx.stroke();
+        }
+      
         for (let j = i + 1; j < N_DOTS; j++) {
           const dx = dots[j][0] - dots[i][0];
           const dy = dots[j][1] - dots[i][1];
@@ -92,7 +112,7 @@ export default function Home() {
       }
 
       /* draw dots */
-      ctx.fillStyle = "black";
+      
       for (const [x, y] of dots) {
         ctx.beginPath();
         ctx.arc(x, y, RADIUS, 0, Math.PI * 2);

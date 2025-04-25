@@ -1,16 +1,18 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
+  --card-width: 60vw;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #F6EEE3;
+  background-color: #cbb79b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --topbar-h: 3.5rem;
   /* Code Card */
   --blue-bg: #DBEAFE;
   --blue-icon: #2563EB;
@@ -29,6 +31,9 @@
   --border-color: #000000;
   --shadow-color: #0a0a0a;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 a {
   font-weight: 500;
@@ -43,21 +48,24 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
   color: black;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--topbar-h);
   scroll-behavior: smooth;
 }
 main {
   position: relative; 
   z-index: 11; 
+  padding-top: var(--topbar-h);
   
 }
 
 .section {
-  height: 100vh;
-  max-width: 90%;
+  height: calc(100vh - var(--topbar-h));
+  max-width: var(--card-width);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,6 +74,17 @@ main {
   flex-direction: width;
 }
 
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999; /* higher than anything else */
+  width: 100%; /* full viewport width */
+  height: var(--topbar-h);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
 
 .hero-section {
   background: transparent;
@@ -146,22 +165,22 @@ button:focus-visible {
   transform: translate(0, 0);
   
 }
-button.insertButton {
+button.green {
   background-color: var(--green-bg);
   color: var(--green-icon);
 }
 
-button.updateButton {
+button.orange {
   background-color: var(--amber-bg);
   color: var(--amber-icon);
 }
 
-button.deleteButton {
+button.red {
   background-color: #fca5a5;
   color: #b91c1c;
 }
 
-button.selectButton {
+button.blue {
   background-color: var(--blue-bg);
   color: var(--blue-icon);
 }
@@ -186,12 +205,73 @@ button.selectButton {
   box-sizing: border-box;
   justify-content: space-evenly;
   padding: 2rem;
-
 }
 
 .bottom-row {
   width: 100%;
   display: flex;
-  gap: 2dvw;
+  gap: 1dvw;
   justify-content: space-between;
+}
+
+.bottom-row .feature-card {
+  flex: 1 1 calc(50% - 0.5rem);
+  /* 2. Cap their height at, say, 40% of the viewport */
+  max-height: 50vh;
+  /* 3. If there’s too much content, scroll inside the card */
+  overflow-y: auto;
+  box-sizing: border-box;  /* include padding in that max-height */
+}
+
+.dots {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: auto;
+  background: #EDE2C7;
+
+}
+
+.dots > canvas {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.topbar-card {
+  padding: 0.5rem 1rem;
+  height: 3rem; /* or adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.topbar-card h1,
+.topbar-card p {
+  margin: 0; /* prevent vertical expansion */
+  font-size: 1rem;
+}
+
+.contact-grid {
+  display: flex;
+  grid-template-columns: repeat(auto‑fit, minmax(180px, 1fr)); 
+  gap: 2rem 3rem;
+  width:100%;
+  justify-content: space-evenly;
+}
+
+
+.skills-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.section:first-of-type {
+  padding-top: 4rem; /* match or exceed your Topbar height */
+  box-sizing: border-box;
 }

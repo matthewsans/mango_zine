@@ -14,8 +14,8 @@ components:
 views:
   (Priority: Home -> Projects -> Playground -> Resume -> Contact)
   ☐ Home - add actual intro text, name, and short CTA
-  ☐ Projects - create cards.ts and import it
-  ☐ Projects - map through card data and render <FeatureCard> for each
+  ✔ Projects - create cards.ts and import it @started(25-04-22 13:47) @done(25-04-22 13:47) @lasted(3s)
+  ✔ Projects - map through card data and render <FeatureCard> for each @started(25-04-22 13:47) @done(25-04-22 13:47) @lasted(23s)
   ☐ Playground - embed or link to game canvas
   ☐ Resume - add styled resume download button inside FeatureCard
   ☐ Contact - include email + social links

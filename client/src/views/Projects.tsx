@@ -1,14 +1,19 @@
+import { projects } from "../data/cards";
 import FeatureCard from "../components/FeatureCard";
 
-const Home = () => {
-  return (
-    <div  >
-    <FeatureCard style={{ width: "100%", height: "20vh" }}>
-      <h1>these are my projects</h1>
-      <p>holy moly</p>
-    </FeatureCard>
-    </div>
-  );
-};
+const Projects = () => (
+  <div className="layout-grid">
+    {projects.map((p) => (
+      <FeatureCard key={p.title}>
+        <h3>{p.title}</h3>
+        <p style={{ fontStyle: "italic" }}>{p.subtitle}</p>
+        <p>{p.blurb}</p>
+        <a href={p.link} target="_blank" rel="noreferrer" className="button selectButton">
+          Details →
+        </a>
+      </FeatureCard>
+    ))}
+  </div>
+);
 
-export default Home;
+export default Projects;
