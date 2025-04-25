@@ -1,6 +1,6 @@
 
 import FeatureCard from "../components/FeatureCard";
-import { FiMapPin, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 
 const Introduction = () => {

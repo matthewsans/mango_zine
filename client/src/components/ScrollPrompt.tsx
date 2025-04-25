@@ -1,9 +1,6 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const ScrollPrompt = () => {
-  const heroRef = useRef(null);
-  const isInView = useInView(heroRef, { amount: 0.6 });
 
   return (
     <><motion.div

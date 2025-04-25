@@ -5,7 +5,6 @@ import Introduction from "./views/Introduction";
 import Home from "./views/Home";
 import Projects from "./views/Projects";
 import Topbar from "./views/Topbar";
-import Playground from "./views/Playground";
 import Contact from "./views/Contact";
 
 function App() {
